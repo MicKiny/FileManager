@@ -3,20 +3,20 @@ import string
 import random
 import psutil
 
-    # this function using the psutil library detects all attached drives to the system
+# this function using the psutil library detects all attached drives to the system
 def detect_attached_drives():
-        # creating a variable that lists the drives
+    # creating a variable that lists the drives
     atch_drive = []
     for drive in psutil.disk_partitions():
-            # describes the initial file path(mountpoint)
+        # describes the initial file path(mountpoint)
         if drive.mountpoint:
-                # adds the mountpoint to the atch_drive list using the .append function for the user
+            # adds the mountpoint to the atch_drive list using the .append function for the user
             atch_drive.append(drive.mountpoint)
-                # returns the list of drives available
+    # returns the list of drives available
     return atch_drive
 
 drives = detect_attached_drives()
-    # self explanitory, if no detectable drives there are no drives 
+
 if not drives:
     print("No drives found.")
     exit()
