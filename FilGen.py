@@ -57,12 +57,12 @@ NumF = 126
 N = 14
 
 for i in range(NumF):
-# .join(random.choices) combines the ascii 26 letter alphabet and digits 0-9 to create a file name to the specified length of N
+    # .join(random.choices) combines the ascii 26 letter alphabet and digits 0-9 to create a file name to the specified length of N
     res = ''.join(random.choices(string.ascii_uppercase + string.digits, k=N))
     rand_fform = random.choice(file_form_list)
     filename = str(res) + str(rand_fform)
     ext_path = os.path.join(selected_drive, filename)
-# opens ext_path as a writable file
+    # opens ext_path as a writable file
     with open(ext_path, "w") as file:
         pass
 
